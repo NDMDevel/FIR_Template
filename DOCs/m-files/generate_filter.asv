@@ -1,0 +1,3 @@
+function generate_filter(f,m)
+    b = fir2(63,f,m);
+end

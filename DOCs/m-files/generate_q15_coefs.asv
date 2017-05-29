@@ -1,0 +1,3 @@
+function generate_q15_coefs(h,path)
+    fprintf(dec2q15(,'hex')
+end

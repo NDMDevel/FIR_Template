@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+  <executable name="dist/default/production/FIR.X.production.elf">
+    <memory name="data">
+      <units>bytes</units>
+      <length>32768</length>
+      <used>302</used>
+      <free>32466</free>
+    </memory>
+    <memory name="program">
+      <units>bytes</units>
+      <length>263394</length>
+      <used>4599</used>
+      <free>258795</free>
+    </memory>
+  </executable>
+</project>
