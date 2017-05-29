@@ -116,8 +116,6 @@ void ADC1_Initialize (void)
    IEC0bits.AD1IE = 1;
 }
 
-
-//#define N 4
 #define N 64
 uint16_t DAC_VALUE;
 extern uint16_t x[N];
@@ -137,7 +135,8 @@ void __attribute__ ( ( __interrupt__ , auto_psv ) ) _AD1Interrupt ( void )
     asm("NOP");
     asm("MOV %0, W8"::"r"(W8_SAVE));
     asm("MOV #%0, W10"::"i"(h));    //    asm("MOV %0, W10"::"r"(W10_SAVE));
-    asm("MOV 0x0300, W0");
+    asm("MOV %0, W0"::"r"(ADC1BUF0));
+//    asm("MOV 0x0300, W0");
     asm("MOV W0, [W8]");
     asm("CLR A, [W8]-=2, W4, [W10]+=2, W5");
     asm("REPEAT #%0"::"i"(N-1));

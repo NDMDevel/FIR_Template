@@ -85,13 +85,13 @@ Program Memory  [Origin = 0x200, Length = 0x2adec]
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200               0x154           0x1fe  (510)
-.text                        0x354               0x544           0x7e6  (2022)
-.dinit                       0x898                0x28            0x3c  (60)
-.text                        0x8c0                0x26            0x39  (57)
-.init.delay32                0x8e6                0x1c            0x2a  (42)
-.text                        0x902                0x28            0x3c  (60)
+.text                        0x354               0xa1a           0xf27  (3879)
+.dinit                       0xd6e                0x28            0x3c  (60)
+.text                        0xd96                0x26            0x39  (57)
+.init.delay32                0xdbc                0x1c            0x2a  (42)
+.text                        0xdd8                0x28            0x3c  (60)
 
-                 Total program memory used (bytes):          0xabf  (2751) 1%
+                 Total program memory used (bytes):         0x1200  (4608) 1%
 
 
 Ivt Memory  [Origin = 0x4, Length = 0x1fc]
@@ -115,10 +115,10 @@ section                    address      alignment gaps    total length  (dec)
 .nbss                       0x1000                   0             0xc  (12)
 .ndata                      0x100c                   0             0x2  (2)
 .bss                        0x100e                   0            0x20  (32)
-_030E4480592befd8           0x1100                   0             0x8  (8)
-_030E4360592befd8           0x8e00                   0             0x8  (8)
+_031F1480592c68f4           0x1100                   0            0x80  (128)
+_031F1360592c68f4           0x8e00                   0            0x80  (128)
 
-                 Total data memory used (bytes):           0x3e  (62) <1%
+                 Total data memory used (bytes):          0x12e  (302) <1%
 
 
 Dynamic Memory Usage
@@ -126,9 +126,9 @@ Dynamic Memory Usage
 region                     address                      maximum length  (dec)
 ------                     -------                      ---------------------
 heap                             0                                   0  (0)
-stack                       0x1108                              0x6ef8  (28408)
+stack                       0x1180                              0x6e80  (28288)
 
-                 Maximum dynamic memory (bytes):         0x6ef8  (28408)
+                 Maximum dynamic memory (bytes):         0x6e80  (28288)
 
 
 External Symbols in Data Memory (by address):
@@ -161,56 +161,58 @@ External Symbols in Program Memory (by address):
                   0x000324                  __HardTrapError
                   0x00032c                  __SoftTrapError
                   0x00034e                  __DefaultInterrupt
-                  0x000354                  _SPI1_Initialize
-                  0x000366                  _SPI1_Exchange
-                  0x0003ce                  _SPI1_ExchangeBuffer
-                  0x0004e8                  _SPI1_Exchange8bit
-                  0x0004f8                  _SPI1_Exchange8bitBuffer
-                  0x00050c                  _SPI1_TransferModeGet
-                  0x000522                  _SPI1_StatusGet
-                  0x000548                  _SYSTEM_Initialize
-                  0x00055e                  _OSCILLATOR_Initialize
-                  0x000588                  _SYSTEM_GetResetCause
-                  0x0005e2                  _SYSTEM_ResetCauseFromTrap
-                  0x0005fa                  _SYSTEM_ResetCauseFromIllegalOpcode
-                  0x000616                  _SYSTEM_ResetCauseFromConfigurationMismatch
-                  0x000632                  _SYSTEM_ResetCauseFromExternal
-                  0x00064e                  _SYSTEM_ResetCauseFromSoftware
-                  0x00066a                  _SYSTEM_ResetCauseFromWatchdogTimer
-                  0x000684                  _SYSTEM_ResetCauseClear
-                  0x000694                  _SYSTEM_ResetCauseClearAll
-                  0x00069c                  _main
-                  0x0007d6                  _ADC1_Initialize
-                  0x0007f8                  __AD1Interrupt
-                  0x0008c0                  _PIN_MANAGER_Initialize
-                  0x0008e6                  ___delay32
-                  0x00091a                  _INTERRUPT_Initialize
+                  0x000360                  _InitCoefs
+                  0x0008de                  _main
+                  0x000960                  _SPI1_Initialize
+                  0x000972                  _SPI1_Exchange
+                  0x0009da                  _SPI1_ExchangeBuffer
+                  0x000af4                  _SPI1_Exchange8bit
+                  0x000b04                  _SPI1_Exchange8bitBuffer
+                  0x000b18                  _SPI1_TransferModeGet
+                  0x000b2e                  _SPI1_StatusGet
+                  0x000b54                  _SYSTEM_Initialize
+                  0x000b6a                  _OSCILLATOR_Initialize
+                  0x000b94                  _SYSTEM_GetResetCause
+                  0x000bee                  _SYSTEM_ResetCauseFromTrap
+                  0x000c06                  _SYSTEM_ResetCauseFromIllegalOpcode
+                  0x000c22                  _SYSTEM_ResetCauseFromConfigurationMismatch
+                  0x000c3e                  _SYSTEM_ResetCauseFromExternal
+                  0x000c5a                  _SYSTEM_ResetCauseFromSoftware
+                  0x000c76                  _SYSTEM_ResetCauseFromWatchdogTimer
+                  0x000c90                  _SYSTEM_ResetCauseClear
+                  0x000ca0                  _SYSTEM_ResetCauseClearAll
+                  0x000ca8                  _ADC1_Initialize
+                  0x000cca                  __AD1Interrupt
+                  0x000d96                  _PIN_MANAGER_Initialize
+                  0x000dbc                  ___delay32
+                  0x000df0                  _INTERRUPT_Initialize
                   0x02affa                  __FGS.sec
 
 External Symbols in Program Memory (by name):
 
-                  0x0007d6                  _ADC1_Initialize
-                  0x00091a                  _INTERRUPT_Initialize
-                  0x00055e                  _OSCILLATOR_Initialize
-                  0x0008c0                  _PIN_MANAGER_Initialize
-                  0x000366                  _SPI1_Exchange
-                  0x0004e8                  _SPI1_Exchange8bit
-                  0x0004f8                  _SPI1_Exchange8bitBuffer
-                  0x0003ce                  _SPI1_ExchangeBuffer
-                  0x000354                  _SPI1_Initialize
-                  0x000522                  _SPI1_StatusGet
-                  0x00050c                  _SPI1_TransferModeGet
-                  0x000588                  _SYSTEM_GetResetCause
-                  0x000548                  _SYSTEM_Initialize
-                  0x000684                  _SYSTEM_ResetCauseClear
-                  0x000694                  _SYSTEM_ResetCauseClearAll
-                  0x000616                  _SYSTEM_ResetCauseFromConfigurationMismatch
-                  0x000632                  _SYSTEM_ResetCauseFromExternal
-                  0x0005fa                  _SYSTEM_ResetCauseFromIllegalOpcode
-                  0x00064e                  _SYSTEM_ResetCauseFromSoftware
-                  0x0005e2                  _SYSTEM_ResetCauseFromTrap
-                  0x00066a                  _SYSTEM_ResetCauseFromWatchdogTimer
-                  0x0007f8                  __AD1Interrupt
+                  0x000ca8                  _ADC1_Initialize
+                  0x000df0                  _INTERRUPT_Initialize
+                  0x000360                  _InitCoefs
+                  0x000b6a                  _OSCILLATOR_Initialize
+                  0x000d96                  _PIN_MANAGER_Initialize
+                  0x000972                  _SPI1_Exchange
+                  0x000af4                  _SPI1_Exchange8bit
+                  0x000b04                  _SPI1_Exchange8bitBuffer
+                  0x0009da                  _SPI1_ExchangeBuffer
+                  0x000960                  _SPI1_Initialize
+                  0x000b2e                  _SPI1_StatusGet
+                  0x000b18                  _SPI1_TransferModeGet
+                  0x000b94                  _SYSTEM_GetResetCause
+                  0x000b54                  _SYSTEM_Initialize
+                  0x000c90                  _SYSTEM_ResetCauseClear
+                  0x000ca0                  _SYSTEM_ResetCauseClearAll
+                  0x000c22                  _SYSTEM_ResetCauseFromConfigurationMismatch
+                  0x000c3e                  _SYSTEM_ResetCauseFromExternal
+                  0x000c06                  _SYSTEM_ResetCauseFromIllegalOpcode
+                  0x000c5a                  _SYSTEM_ResetCauseFromSoftware
+                  0x000bee                  _SYSTEM_ResetCauseFromTrap
+                  0x000c76                  _SYSTEM_ResetCauseFromWatchdogTimer
+                  0x000cca                  __AD1Interrupt
                   0x00030c                  __AddressError
                   0x00031c                  __DMACError
                   0x00034e                  __DefaultInterrupt
@@ -220,12 +222,12 @@ External Symbols in Program Memory (by name):
                   0x0002fa                  __OscillatorFail
                   0x00032c                  __SoftTrapError
                   0x000302                  __StackError
-                  0x0008e6                  ___delay32
+                  0x000dbc                  ___delay32
                   0x000248                  __data_init
                   0x000248                  __data_init_extended
                   0x00023c                  __psv_init
                   0x000200                  __resetPRI
-                  0x00069c                  _main
+                  0x0008de                  _main
 
 Memory Configuration
 
@@ -355,7 +357,7 @@ __FUID3
 .comment
  *(.comment)
 
-.debug_info       0x000000       0x55a8
+.debug_info       0x000000       0x55e6
  *(.debug_info)
  .debug_info      0x000000        0x5cb build/default/debug/mcc_generated_files/traps.o
  .debug_info      0x0005cb       0x1586 build/default/debug/mcc_generated_files/adc1.o
@@ -363,10 +365,10 @@ __FUID3
  .debug_info      0x00331c        0x297 build/default/debug/mcc_generated_files/interrupt_manager.o
  .debug_info      0x0035b3        0x25c build/default/debug/mcc_generated_files/pin_manager.o
  .debug_info      0x00380f        0x946 build/default/debug/mcc_generated_files/spi1.o
- .debug_info      0x004155       0x1453 build/default/debug/main.o
+ .debug_info      0x004155       0x1491 build/default/debug/main.o
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev     0x000000        0x842
+.debug_abbrev     0x000000        0x86a
  *(.debug_abbrev)
  .debug_abbrev    0x000000        0x10d build/default/debug/mcc_generated_files/traps.o
  .debug_abbrev    0x00010d        0x16f build/default/debug/mcc_generated_files/adc1.o
@@ -374,19 +376,19 @@ __FUID3
  .debug_abbrev    0x000477         0xa7 build/default/debug/mcc_generated_files/interrupt_manager.o
  .debug_abbrev    0x00051e         0x4c build/default/debug/mcc_generated_files/pin_manager.o
  .debug_abbrev    0x00056a        0x183 build/default/debug/mcc_generated_files/spi1.o
- .debug_abbrev    0x0006ed        0x155 build/default/debug/main.o
+ .debug_abbrev    0x0006ed        0x17d build/default/debug/main.o
 
-.debug_line       0x000000        0x79a
+.debug_line       0x000000        0x83c
  *(.debug_line)
  .debug_line      0x000000        0x12f build/default/debug/mcc_generated_files/traps.o
- .debug_line      0x00012f        0x120 build/default/debug/mcc_generated_files/adc1.o
- .debug_line      0x00024f        0x171 build/default/debug/mcc_generated_files/mcc.o
- .debug_line      0x0003c0         0xb0 build/default/debug/mcc_generated_files/interrupt_manager.o
- .debug_line      0x000470         0xb5 build/default/debug/mcc_generated_files/pin_manager.o
- .debug_line      0x000525        0x170 build/default/debug/mcc_generated_files/spi1.o
- .debug_line      0x000695        0x105 build/default/debug/main.o
+ .debug_line      0x00012f        0x121 build/default/debug/mcc_generated_files/adc1.o
+ .debug_line      0x000250        0x171 build/default/debug/mcc_generated_files/mcc.o
+ .debug_line      0x0003c1         0xb0 build/default/debug/mcc_generated_files/interrupt_manager.o
+ .debug_line      0x000471         0xb5 build/default/debug/mcc_generated_files/pin_manager.o
+ .debug_line      0x000526        0x170 build/default/debug/mcc_generated_files/spi1.o
+ .debug_line      0x000696        0x1a6 build/default/debug/main.o
 
-.debug_frame      0x000000        0x418
+.debug_frame      0x000000        0x45a
  *(.debug_frame)
  .debug_frame     0x000000         0xb0 build/default/debug/mcc_generated_files/traps.o
  .debug_frame     0x0000b0         0x5a build/default/debug/mcc_generated_files/adc1.o
@@ -394,7 +396,7 @@ __FUID3
  .debug_frame     0x0002a6         0x30 build/default/debug/mcc_generated_files/interrupt_manager.o
  .debug_frame     0x0002d6         0x30 build/default/debug/mcc_generated_files/pin_manager.o
  .debug_frame     0x000306         0xd8 build/default/debug/mcc_generated_files/spi1.o
- .debug_frame     0x0003de         0x3a build/default/debug/main.o
+ .debug_frame     0x0003de         0x7c build/default/debug/main.o
 
 .debug_str        0x000000        0x298
  *(.debug_str)
@@ -412,7 +414,7 @@ __FUID3
  *(.debug_macinfo)
 
 .debug_pubnames
-                  0x000000        0x3c0
+                  0x000000        0x3ce
  *(.debug_pubnames)
  .debug_pubnames
                   0x000000         0xa4 build/default/debug/mcc_generated_files/traps.o
@@ -427,7 +429,7 @@ __FUID3
  .debug_pubnames
                   0x0002d2         0xae build/default/debug/mcc_generated_files/spi1.o
  .debug_pubnames
-                  0x000380         0x40 build/default/debug/main.o
+                  0x000380         0x4e build/default/debug/main.o
 
 .debug_ranges
  *(.debug_ranges)
@@ -1605,16 +1607,16 @@ __c30_signature
 .ndata              0x100c          0x2
  .ndata             0x100c          0x2 build/default/debug/mcc_generated_files/traps.o
 
-_030E4480592befd8
-                    0x1100          0x8
- _030E4480592befd8
-                    0x1100          0x8 build/default/debug/main.o
+_031F1480592c68f4
+                    0x1100         0x80
+ _031F1480592c68f4
+                    0x1100         0x80 build/default/debug/main.o
                     0x1100                  _x
 
-_030E4360592befd8
-                    0x8e00          0x8
- _030E4360592befd8
-                    0x8e00          0x8 build/default/debug/main.o
+_031F1360592c68f4
+                    0x8e00         0x80
+ _031F1360592c68f4
+                    0x8e00         0x80 build/default/debug/main.o
                     0x8e00                  _h
 
 .bss                0x100e         0x20
@@ -1678,47 +1680,48 @@ _030E4360592befd8
  .config_JTAGEN
                   0x02aff0          0x2 build/default/debug/mcc_generated_files/mcc.o
 
-.text             0x000354        0x544
- .text            0x000354        0x1d6 build/default/debug/mcc_generated_files/spi1.o
-                  0x000354                  _SPI1_Initialize
-                  0x000366                  _SPI1_Exchange
-                  0x0003ce                  _SPI1_ExchangeBuffer
-                  0x0004e8                  _SPI1_Exchange8bit
-                  0x0004f8                  _SPI1_Exchange8bitBuffer
-                  0x00050c                  _SPI1_TransferModeGet
-                  0x000522                  _SPI1_StatusGet
- .text            0x00052a        0x172 build/default/debug/mcc_generated_files/mcc.o
-                  0x000548                  _SYSTEM_Initialize
-                  0x00055e                  _OSCILLATOR_Initialize
-                  0x000588                  _SYSTEM_GetResetCause
-                  0x000590                  _SYSTEM_ResetCauseHandler
-                  0x0005e2                  _SYSTEM_ResetCauseFromTrap
-                  0x0005fa                  _SYSTEM_ResetCauseFromIllegalOpcode
-                  0x000616                  _SYSTEM_ResetCauseFromConfigurationMismatch
-                  0x000632                  _SYSTEM_ResetCauseFromExternal
-                  0x00064e                  _SYSTEM_ResetCauseFromSoftware
-                  0x00066a                  _SYSTEM_ResetCauseFromWatchdogTimer
-                  0x000684                  _SYSTEM_ResetCauseClear
-                  0x000694                  _SYSTEM_ResetCauseClearAll
- .text            0x00069c        0x13a build/default/debug/main.o
-                  0x00069c                  _main
- .text            0x0007d6         0xc2 build/default/debug/mcc_generated_files/adc1.o
-                  0x0007d6                  _ADC1_Initialize
-                  0x0007f8                  __AD1Interrupt
+.text             0x000354        0xa1a
+ .text            0x000354        0x60c build/default/debug/main.o
+                  0x000360                  _InitCoefs
+                  0x0008de                  _main
+ .text            0x000960        0x1d6 build/default/debug/mcc_generated_files/spi1.o
+                  0x000960                  _SPI1_Initialize
+                  0x000972                  _SPI1_Exchange
+                  0x0009da                  _SPI1_ExchangeBuffer
+                  0x000af4                  _SPI1_Exchange8bit
+                  0x000b04                  _SPI1_Exchange8bitBuffer
+                  0x000b18                  _SPI1_TransferModeGet
+                  0x000b2e                  _SPI1_StatusGet
+ .text            0x000b36        0x172 build/default/debug/mcc_generated_files/mcc.o
+                  0x000b54                  _SYSTEM_Initialize
+                  0x000b6a                  _OSCILLATOR_Initialize
+                  0x000b94                  _SYSTEM_GetResetCause
+                  0x000b9c                  _SYSTEM_ResetCauseHandler
+                  0x000bee                  _SYSTEM_ResetCauseFromTrap
+                  0x000c06                  _SYSTEM_ResetCauseFromIllegalOpcode
+                  0x000c22                  _SYSTEM_ResetCauseFromConfigurationMismatch
+                  0x000c3e                  _SYSTEM_ResetCauseFromExternal
+                  0x000c5a                  _SYSTEM_ResetCauseFromSoftware
+                  0x000c76                  _SYSTEM_ResetCauseFromWatchdogTimer
+                  0x000c90                  _SYSTEM_ResetCauseClear
+                  0x000ca0                  _SYSTEM_ResetCauseClearAll
+ .text            0x000ca8         0xc6 build/default/debug/mcc_generated_files/adc1.o
+                  0x000ca8                  _ADC1_Initialize
+                  0x000cca                  __AD1Interrupt
 
-.dinit            0x000898         0x28
- .dinit           0x000898         0x28 data_init
+.dinit            0x000d6e         0x28
+ .dinit           0x000d6e         0x28 data_init
 
-.text             0x0008c0         0x26
- .text            0x0008c0         0x26 build/default/debug/mcc_generated_files/pin_manager.o
-                  0x0008c0                  _PIN_MANAGER_Initialize
+.text             0x000d96         0x26
+ .text            0x000d96         0x26 build/default/debug/mcc_generated_files/pin_manager.o
+                  0x000d96                  _PIN_MANAGER_Initialize
 
-.init.delay32     0x0008e6         0x1c
- .init.delay32    0x0008e6         0x1c c:/program files/microchip/xc16/v1.31/bin/bin/../../lib\liblega-pic30-elf.a(delay32ep.Leo)
-                  0x0008e6                  ___delay32
+.init.delay32     0x000dbc         0x1c
+ .init.delay32    0x000dbc         0x1c c:/program files/microchip/xc16/v1.31/bin/bin/../../lib\liblega-pic30-elf.a(delay32ep.Leo)
+                  0x000dbc                  ___delay32
 
-.text             0x000902         0x28
- .text            0x000902         0x18 build/default/debug/mcc_generated_files/traps.o
-                  0x000902                  _TRAPS_halt_on_error
- .text            0x00091a         0x10 build/default/debug/mcc_generated_files/interrupt_manager.o
-                  0x00091a                  _INTERRUPT_Initialize
+.text             0x000dd8         0x28
+ .text            0x000dd8         0x18 build/default/debug/mcc_generated_files/traps.o
+                  0x000dd8                  _TRAPS_halt_on_error
+ .text            0x000df0         0x10 build/default/debug/mcc_generated_files/interrupt_manager.o
+                  0x000df0                  _INTERRUPT_Initialize

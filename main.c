@@ -51,7 +51,6 @@
                          Main application
  */
 
-//#define N   4
 #define N   64
 #define WREG_X_SPACE    8   //W8
 #define WREG_Y_SPACE    10  //W10
@@ -59,7 +58,6 @@ __eds__ uint16_t __attribute__((aligned(256),space(ymemory),eds)) h[N];
 __eds__ uint16_t __attribute__((aligned(256),space(xmemory),eds)) x[N];
 __eds__ uint16_t *W8_SAVE;
 __eds__ uint16_t *W10_SAVE;
-
 
 void InitCoefs(void)
 {
